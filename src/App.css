@@ -1,0 +1,11 @@
+/* src/App.css */
+@font-face {
+    font-family: 'GT Walsheim';
+    src: url('/fonts/GT-Walsheim.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'GT-Walsheim-Black-Oblique-Trial-BF651b7fc5608e6.otf';
+}
