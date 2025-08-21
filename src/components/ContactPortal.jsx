@@ -237,54 +237,40 @@ function ContactPortal() {
 }
 
 const styles = {
-  container: {
+   container: {
     background: 'black',
     color: '#fff',
     minHeight: '100vh',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    padding: '2rem',
+    padding: '1rem',
+    boxSizing: 'border-box',
   },
   header: {
     textAlign: 'center',
     marginBottom: '2rem',
     width: '100%',
+    maxWidth: '800px',
   },
   title: {
-    fontSize: '2.5rem',
+    fontSize: 'clamp(1.8rem, 5vw, 2.5rem)',
     marginBottom: '0.5rem',
     color: '#CB4D29',
   },
   subtitle: {
-    fontSize: '1.2rem',
+    fontSize: 'clamp(1rem, 2.5vw, 1.2rem)',
     color: '#c4bfbf',
-    maxWidth: '600px',
     margin: '0 auto',
-  },
-  instructions: {
-    backgroundColor: '#2D3748',
-    borderRadius: '10px',
-    padding: '1.5rem',
-    marginBottom: '2rem',
-    width: '100%',
-    maxWidth: '800px',
-  },
-  instructionsTitle: {
-    color: '#CB4D29',
-    marginBottom: '1rem',
-  },
-  instructionsList: {
-    paddingLeft: '1.5rem',
-    lineHeight: '1.6',
   },
   contactContainer: {
     width: '100%',
     maxWidth: '800px',
     backgroundColor: '#19191b',
     borderRadius: '10px',
-    padding: '2rem',
+    padding: 'clamp(1rem, 3vw, 2rem)',
     boxShadow: '0 10px 25px rgba(0, 0, 0, 0.5)',
+    boxSizing: 'border-box',
   },
   form: {
     display: 'flex',
@@ -293,7 +279,7 @@ const styles = {
   },
   formRow: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(3, 1fr)',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
     gap: '1rem',
   },
   formGroup: {
@@ -302,12 +288,18 @@ const styles = {
   },
   formLabel: {
     fontWeight: '500',
-    fontSize: '16px',
+    fontSize: 'clamp(14px, 3vw, 16px)',
     marginBottom: '0.5rem',
     display: 'flex',
     alignItems: 'center',
     gap: '0.4rem',
     color: 'white',
+  },
+  descriptionHeader: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: '0.5rem',
   },
   required: {
     color: 'red',
@@ -318,27 +310,29 @@ const styles = {
     border: '1px solid #2e2c2c',
     backgroundColor: '#0f0f0f',
     borderRadius: '8px',
-    fontSize: '1rem',
+    fontSize: '16px', // Prevents zoom on iOS
     width: '100%',
     lineHeight: '1.6rem',
     color: 'white',
     transition: 'border-color 0.3s',
+    boxSizing: 'border-box',
   },
   textarea: {
     padding: '0.75rem',
     border: '1px solid #2e2c2c',
     backgroundColor: '#0f0f0f',
     borderRadius: '8px',
-    fontSize: '1rem',
+    fontSize: '16px', // Prevents zoom on iOS
     width: '100%',
     lineHeight: '1.6rem',
     color: 'white',
     transition: 'border-color 0.3s',
     fontFamily: 'inherit',
+    boxSizing: 'border-box',
+    resize: 'vertical',
   },
   textareaSmall: {
     minHeight: '40px',
-    resize: 'vertical',
   },
   error: {
     borderColor: 'red',
@@ -350,7 +344,6 @@ const styles = {
   },
   wordCount: {
     fontSize: '0.8rem',
-    marginLeft: 'auto',
     color: '#c4bfbf',
   },
   successMessage: {
@@ -362,6 +355,7 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     gap: '0.5rem',
+    fontSize: 'clamp(14px, 2vw, 16px)',
   },
   errorMessage: {
     padding: '12px',
@@ -372,15 +366,15 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     gap: '0.5rem',
+    fontSize: 'clamp(14px, 2vw, 16px)',
   },
   submitBtn: {
-    padding: '1rem',
+    padding: 'clamp(0.8rem, 2vw, 1rem)',
     background: '#CB4D29',
     color: '#fff',
-    alignItems: 'center',
     border: 'none',
     borderRadius: '8px',
-    fontSize: '1rem',
+    fontSize: 'clamp(0.9rem, 2vw, 1rem)',
     cursor: 'pointer',
     transition: 'background 0.2s ease-in-out',
     fontWeight: '600',
@@ -388,12 +382,7 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     gap: '0.5rem',
-  },
-  footer: {
-    marginTop: '2rem',
-    textAlign: 'center',
-    color: '#c4bfbf',
-    fontSize: '0.9rem',
+    width: '100%',
   },
 };
 
